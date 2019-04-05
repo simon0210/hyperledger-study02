@@ -28,6 +28,8 @@ $) docker rm -f $(docker ps -aq)
 * 네트워크구동
 ```
 $)cd ~/github/hyperledger-study02/tools/network
+$)docker network create im-net
+#)docker network ls
 $)./0-network-start.sh
 ```
 
