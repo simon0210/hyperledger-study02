@@ -28,7 +28,7 @@ import (
 
 var logger = shim.NewLogger("example_cc0")
 
-type Userf struct {
+type User struct {
 	ObjectType string `json:"docType"`
 	Name       string `json:"name"`
 	Age        string `json:"age"`
