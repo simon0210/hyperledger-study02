@@ -1,13 +1,14 @@
 import l from '../../../common/logger';
 
-const fbClient = require('../../../blockchain/bc-client');
+const transaction = require('../../../blockchain/transaction/transaction');
 
 class BalanceService {
   getBalance(req, res) {
     const args = [];
 
     args.push(req.params.id);
-    return Promise.resolve(fbClient.queryChaincode('balance', 'query', args, []));
+    return Promise.resolve(transaction.queryChainCode(null, 'mychannel', 'balance',
+      args, 'query', 'admin', 'org1'));
   }
 
   move(req, res) {
@@ -18,17 +19,26 @@ class BalanceService {
     args.push(req.body.to);
     args.push(req.body.amount.toString());
 
-    return Promise.resolve(fbClient.invokeChaincode('balance', 'move', args, []));
+    return Promise.resolve(transaction.invokeChainCode(null, 'mychannel', 'balance',
+      'move', args, 'admin', 'org1'));
   }
 
   addUser(req, res) {
     l.info(`${this.constructor.name}.byId(${req})`);
     const args = [];
+    const peers = [];
 
     args.push(req.body.name);
     args.push(req.body.balance.toString());
 
-    return Promise.resolve(fbClient.invokeChaincode('balance', 'add', args, []));
+    peers.push('peer0.org1.example.com');
+    peers.push('peer1.org1.example.com');
+    peers.push('peer0.org2.example.com');
+    peers.push('peer1.org2.example.com');
+
+    l.debug(`invoke peers:${peers}`);
+    return Promise.resolve(transaction.invokeChainCode(null, 'mychannel', 'balance',
+      'add', args, 'admin', 'org1'));
   }
 }
 

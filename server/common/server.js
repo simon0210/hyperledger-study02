@@ -13,9 +13,8 @@ import cookieParser from 'cookie-parser';
 import swaggerify from './swagger';
 import l from './logger';
 
-const bc = require('../blockchain/bc-client');
-const couch = require('../couchdb/cocuch-client');
-const config = require('../blockchain/configuration/config');
+
+const hlf = require('../blockchain/hlf-client');
 
 const app = new Express();
 
@@ -28,15 +27,7 @@ export default class ExpressServer {
     app.use(cookieParser(process.env.SESSION_SECRET));
     app.use(Express.static(`${root}/public`));
 
-    if (config.startChannelNetwork) {
-      bc.channelSetUp(path.join('configuration', config.startChannelNetwork))
-        .then(() => {
-          couch.dbSetUp();
-        })
-        .catch(err => {
-          l.error(err.stack ? err.stack : err);
-        });
-    }
+    hlf.setClient();
   }
 
   router(routes) {
