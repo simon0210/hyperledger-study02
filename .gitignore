@@ -9,3 +9,4 @@ tools/network/1.dev/docker/*
 package-lock.json
 tools/network/docker/*
 tools/network/bin/*
+kv/*

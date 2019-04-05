@@ -13,8 +13,8 @@ import cookieParser from 'cookie-parser';
 import swaggerify from './swagger';
 import l from './logger';
 
-
 const hlf = require('../blockchain/hlf-client');
+require('./hlf/config.js');
 
 const app = new Express();
 

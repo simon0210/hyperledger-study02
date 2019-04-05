@@ -28,7 +28,6 @@ class HlfClient {
     const orgArr = Object.keys(orgs);
     orgArr.forEach(async orgName => {
       this._hfc.loadFromConfig(hfc.getConfigSetting(`${orgName}-connection-profile-path`));
-      // await this._hfc.initCredentialStores();
       await this._initCredentialStores(this._hfc, orgName);
     });
   }
