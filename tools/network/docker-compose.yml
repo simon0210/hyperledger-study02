@@ -48,7 +48,6 @@ services:
     - ./channel-artifacts/:/etc/hyperledger/configtx
     - ./crypto-config/ordererOrganizations/example.com/orderers/orderer.example.com/:/etc/hyperledger/msp/orderer
     - ./crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/:/etc/hyperledger/msp/peerOrg1
-    - ./docker/orderer:/var/hyperledger/production
     networks:
     - imnetwork
 
@@ -86,7 +85,6 @@ services:
     - ./crypto-config/peerOrganizations/org1.example.com/peers/peer0.org1.example.com/msp:/etc/hyperledger/msp/peer
     - ./crypto-config/peerOrganizations/org1.example.com/users:/etc/hyperledger/msp/users
     - ./channel-artifacts:/etc/hyperledger/configtx
-    - ./docker/peer:/var/hyperledger/production
     depends_on:
     - orderer.example.com
     - couchdb
@@ -103,8 +101,6 @@ services:
     - COUCHDB_PASSWORD=
     ports:
     - 5984:5984
-    volumes:
-    - ./docker/couchdb:/opt/couchdb/data
     networks:
     - imnetwork
 
