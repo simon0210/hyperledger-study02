@@ -1,0 +1,48 @@
+global:
+  scrape_interval:     15s # By default, scrape targets every 15 seconds.
+  evaluation_interval: 15s # Evaluate rules every 15 seconds.
+
+  # Attach these extra labels to all timeseries collected by this Prometheus instance.
+  external_labels:
+    monitor: 'HLF-monitor'
+
+scrape_configs:
+  - job_name: 'orderer0.example.com'
+    metrics_path: /metrics
+    # Override the global default and scrape targets from this job every 5 seconds.
+    scrape_interval: 1s
+
+    static_configs:
+      - targets: ['orderer0.example.com:9443']
+
+  - job_name: 'peer0.org1.example.com'
+    metrics_path: /metrics
+    # Override the global default and scrape targets from this job every 5 seconds.
+    scrape_interval: 1s
+
+    static_configs:
+      - targets: ['peer0.org1.example.com:9443']
+
+  - job_name: 'peer1.org1.example.com'
+    metrics_path: /metrics
+    # Override the global default and scrape targets from this job every 5 seconds.
+    scrape_interval: 1s
+
+    static_configs:
+      - targets: ['peer1.org1.example.com:9443']
+
+  - job_name: 'peer0.org2.example.com'
+    metrics_path: /metrics
+    # Override the global default and scrape targets from this job every 5 seconds.
+    scrape_interval: 1s
+
+    static_configs:
+      - targets: ['peer0.org2.example.com:9443']
+
+  - job_name: 'peer1.org2.example.com'
+    metrics_path: /metrics
+    # Override the global default and scrape targets from this job every 5 seconds.
+    scrape_interval: 1s
+
+    static_configs:
+      - targets: ['peer1.org2.example.com:9443']
