@@ -52,10 +52,10 @@ definitions:
         type: integer
 
 paths:
-  /examples/test:
-    get:
+  /balance/saveUser:
+    post:
       tags:
-      - Examples
+      - Balance
       description: Fetch all examples
       parameters:
       - name: Id

@@ -40,6 +40,31 @@ class BalanceService {
     return Promise.resolve(transaction.invokeChainCode(null, 'mychannel', 'balance',
       'add', args, 'admin', 'org1'));
   }
+
+  saveUser(req, res) {
+    l.info(`${this.constructor.name}.byId(${req})`);
+    l.debug(req.query.Id);
+    l.debug(req.query.Name);
+    l.debug(req.query.Age);
+    l.debug(req.query.Sex);
+
+    const args = [];
+    const peers = [];
+
+    args.push(req.query.Id);
+    args.push(req.query.Name);
+    args.push(req.query.Age);
+    args.push(req.query.Sex);
+
+    peers.push('peer0.org1.example.com');
+    peers.push('peer1.org1.example.com');
+    peers.push('peer0.org2.example.com');
+    peers.push('peer1.org2.example.com');
+
+    l.debug(`invoke peers:${peers}`);
+    return Promise.resolve(transaction.invokeChainCode(null, 'mychannel', 'balance',
+      'saveUser', args, 'admin', 'org1'));
+  }
 }
 
 export default new BalanceService();

@@ -41,7 +41,7 @@ type SimpleChaincode struct {
 
 // Init - initialize the state
 func (t *SimpleChaincode) Init(stub shim.ChaincodeStubInterface) pb.Response  {
-	logger.Info("########### example_cc0 Init!!!!!!!!!!! ###########")
+	logger.Info("########### Upgrade example_cc0 Init ###########")
 
 	_, args := stub.GetFunctionAndParameters()
 	var A, B string    // Entities
