@@ -13,5 +13,7 @@ mkdir ./channel-artifacts
 
 ./bin/configtxgen -profile OneOrgAnotherChannel -outputCreateChannelTx ./channel-artifacts/channel2.tx -channelID mychannel2
 
+./bin/configtxgen -profile OneOrgAnotherChannelB -outputCreateChannelTx ./channel-artifacts/channel3.tx -channelID mychannel3
+
 #two anchor peer transactions - one for each Peer Org.
 #./bin/configtxgen -profile OneOrgChannel -outputAnchorPeersUpdate ./channel-artifacts/Org1MSPanchors.tx -channelID mychannel -asOrg Org1MSP

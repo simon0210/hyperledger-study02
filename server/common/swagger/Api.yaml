@@ -58,6 +58,11 @@ paths:
       - Balance
       description: Fetch all examples
       parameters:
+      - name: Channel
+        in: query
+        type: string
+        description: an example
+        required: true
       - name: Id
         in: query
         type: string
