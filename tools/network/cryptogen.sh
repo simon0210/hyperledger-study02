@@ -1,3 +1,3 @@
 #!/bin/bash
 
-./bin/cryptogen generate --config=./crypto-config.yaml
+cryptogen generate --config=./crypto-config.yaml

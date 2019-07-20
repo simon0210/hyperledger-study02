@@ -178,6 +178,7 @@ func (t *SimpleChaincode) move(stub shim.ChaincodeStubInterface, args []string) 
 
 func (t *SimpleChaincode) saveUser(stub shim.ChaincodeStubInterface, args []string) pb.Response {
 
+  logger.Info("function saveUser called!!!");
 	var Id string
 	var Name string
 	var Age string

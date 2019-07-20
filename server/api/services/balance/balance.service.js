@@ -37,7 +37,7 @@ class BalanceService {
     peers.push('peer1.org2.example.com');
 
     l.debug(`invoke peers:${peers}`);
-    return Promise.resolve(transaction.invokeChainCode(null, 'mychannel', 'balance',
+    return Promise.resolve(transaction.invokeChainCode(null, 'mychannel', 'mycc',
       'add', args, 'admin', 'org1'));
   }
 
