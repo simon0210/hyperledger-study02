@@ -6,14 +6,14 @@ export FABRIC_CFG_PATH=$PWD
 mkdir ./channel-artifacts
 
 #orderer genesis block: 프로필에 지정된 이름은 configtx.yaml 의 "OrdererGenesisProfile" 이다.
-./bin/configtxgen -profile OneOrgOrdererGenesis -outputBlock ./channel-artifacts/genesis.block
+configtxgen -profile OneOrgOrdererGenesis -outputBlock ./channel-artifacts/genesis.block
 
 #channel configuration transaction: 프로필에 지정된 이름은 configtx.yaml의 "ChannelProfile" 이다.
-./bin/configtxgen -profile OneOrgChannel -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID mychannel
+configtxgen -profile OneOrgChannel -outputCreateChannelTx ./channel-artifacts/channel.tx -channelID mychannel
 
-./bin/configtxgen -profile OneOrgAnotherChannel -outputCreateChannelTx ./channel-artifacts/channel2.tx -channelID mychannel2
+configtxgen -profile OneOrgAnotherChannel -outputCreateChannelTx ./channel-artifacts/channel2.tx -channelID mychannel2
 
-./bin/configtxgen -profile OneOrgAnotherChannelB -outputCreateChannelTx ./channel-artifacts/channel3.tx -channelID mychannel3
+configtxgen -profile OneOrgAnotherChannelB -outputCreateChannelTx ./channel-artifacts/channel3.tx -channelID mychannel3
 
 #two anchor peer transactions - one for each Peer Org.
 #./bin/configtxgen -profile OneOrgChannel -outputAnchorPeersUpdate ./channel-artifacts/Org1MSPanchors.tx -channelID mychannel -asOrg Org1MSP
