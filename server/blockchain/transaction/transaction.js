@@ -86,6 +86,11 @@ class TrxClient {
       // required to be committed
       let allGood = true;
       for (const i in proposalResponses) {
+        logger.info(util.format(
+          'AAAA sent Proposal and received ProposalResponse: Status - %s, message - "%s", metadata - "%s", endorsement signature: %s',
+          proposalResponses[0].response.status, proposalResponses[0].response.message,
+          proposalResponses[0].response.payload, proposalResponses[0].endorsement.signature));
+
         let oneGood = false;
         if (proposalResponses && proposalResponses[i].response &&
           proposalResponses[i].response.status === 200) {
