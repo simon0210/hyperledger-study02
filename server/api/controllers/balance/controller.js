@@ -1,6 +1,14 @@
 import BalanceService from '../../services/balance/balance.service';
 
 export class Controller {
+  hello(req, res) {
+    BalanceService
+      .hello(req, res)
+      .then(r => {
+        if (r) res.json(r);
+        else res.status(404).end();
+      });
+  }
   getBalance(req, res) {
     BalanceService
       .getBalance(req, res)

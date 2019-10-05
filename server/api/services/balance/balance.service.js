@@ -3,6 +3,13 @@ import l from '../../../common/logger';
 const transaction = require('../../../blockchain/transaction/transaction');
 
 class BalanceService {
+  hello(req, res) {
+    const args = [];
+    args.push('test');
+    return Promise.resolve(transaction.queryChainCode(null, 'mychannel', 'balance',
+      args, 'hello', 'admin', 'org1'));
+  }
+
   getBalance(req, res) {
     const args = [];
 

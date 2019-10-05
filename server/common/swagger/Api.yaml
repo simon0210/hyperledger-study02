@@ -126,6 +126,15 @@ paths:
         404:
           description: Example not found
 
+  /balance/hello:
+    get:
+      tags:
+        - Balance
+      description: Get User Balance
+      responses:
+        200:
+          description: Returns User's Currently Balance
+
   /balance/{id}:
     get:
       tags:

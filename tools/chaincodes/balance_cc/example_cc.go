@@ -110,6 +110,11 @@ func (t *SimpleChaincode) Invoke(stub shim.ChaincodeStubInterface) pb.Response {
 		return t.test(stub, args)
 	}
 
+	if function == "hello" {
+		// Add an entity to its state
+		return t.hello(stub, args)
+	}
+
 	if function == "saveUser" {
 		// Add an entity to its state
 		return t.saveUser(stub, args)
@@ -282,6 +287,12 @@ func (t *SimpleChaincode) query(stub shim.ChaincodeStubInterface, args []string)
 
 func (t *SimpleChaincode) test(stub shim.ChaincodeStubInterface, args []string) pb.Response {
 	jsonResp := "{\"Hello ChainCode !!!!!!!!!!!!!\"}"
+	logger.Infof("Query Response:%s\n", jsonResp)
+	return shim.Success([]byte(jsonResp))
+}
+
+func (t *SimpleChaincode) hello(stub shim.ChaincodeStubInterface, args []string) pb.Response {
+	jsonResp := "{\"Hello World !!!!!!!!!!!!!\"}"
 	logger.Infof("Query Response:%s\n", jsonResp)
 	return shim.Success([]byte(jsonResp))
 }
