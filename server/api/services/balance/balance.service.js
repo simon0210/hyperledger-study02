@@ -29,17 +29,17 @@ class BalanceService {
     const peers = [];
 
     args.push('a');
-    args.push('b');
+    // args.push('b');
     args.push('10');
 
     peers.push('peer0.org1.example.com');
     // peers.push('peer1.org1.example.com');
-    peers.push('peer0.org2.example.com');
+    // peers.push('peer0.org2.example.com');
     // peers.push('peer1.org2.example.com');
 
     l.debug(`invoke peers:${peers}`);
-    return Promise.resolve(transaction.invokeChainCode(peers, 'mychannel', 'mycc',
-      'invoke', args, 'admin', 'org1'));
+    return Promise.resolve(transaction.invokeChainCode(peers, 'mychannel', 'balance',
+      'add', args, 'admin', 'org1'));
   }
 
   saveUser(req, res) {
