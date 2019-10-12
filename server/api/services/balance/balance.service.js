@@ -35,9 +35,8 @@ class BalanceService {
     const args = [];
     const peers = [];
 
-    args.push('a');
-    // args.push('b');
-    args.push('10');
+    args.push(req.body.name);
+    args.push(req.body.balance.toString());
 
     peers.push('peer0.org1.example.com');
     // peers.push('peer1.org1.example.com');
