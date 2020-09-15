@@ -81,16 +81,12 @@ $)go build .
 $)cp -rf ./block-listener $HOME/github/hyperledger-study02/tools/network/event
 ```
 ## Event Client
-https://github.com/hyperledger/fabric/tree/release-1.2/examples/events/block-listener
-
-### Block listener
+https://github.com/hyperledger/fabric/tree/release-1.4/examples/events/eventsclient
 ```
-$)cd ~/github/hyperledger-study02/tools/network/event
-$)./block-listener -events-address=127.0.0.1:7053 -events-mspdir=../crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp -events-mspid=Org1MSP
-(window 인 경우)
-$)./block-listener.exe -events-address=127.0.0.1:7053 -events-mspdir=../crypto-config/peerOrganizations/org1.example.com/users/Admin@org1.example.com/msp -events-mspid=Org1MSP
-
+$)cd ~/github/fastcampus/hyperledger-study02/tools/network/event
+$)./events.sh
 ```
+
 ## Fabric Build
 ```
 $)cd $GOPATH/src/github.com/hyperledger/fabric
