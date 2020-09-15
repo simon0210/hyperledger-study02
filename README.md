@@ -2,7 +2,7 @@
 ## 사전 필요 사항 ##
 * nodeJS v8.11.3 이상
 * Docker 17.12.1-ce 이상
-* HLF 1.2 Image
+* HLF 1.4 Image
 * yo (npm install -g yo generator-express-no-stress) 
 
 ## HLF 기반 Simple Balance API 개발 환경 구성

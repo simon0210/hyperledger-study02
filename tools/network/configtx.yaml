@@ -129,16 +129,16 @@ Profiles:
             Organizations:
                 - *Org1
 
-    OneOrgAnotherChannel:
-        Consortium: SampleConsortium
-        Application:
-            <<: *ApplicationDefaults
-            Organizations:
-                - *Org1
-
-    OneOrgAnotherChannelB:
-        Consortium: SampleConsortium
-        Application:
-            <<: *ApplicationDefaults
-            Organizations:
-                - *Org1
+#    OneOrgAnotherChannel:
+#        Consortium: SampleConsortium
+#        Application:
+#            <<: *ApplicationDefaults
+#            Organizations:
+#                - *Org1
+#
+#    OneOrgAnotherChannelB:
+#        Consortium: SampleConsortium
+#        Application:
+#            <<: *ApplicationDefaults
+#            Organizations:
+#                - *Org1
