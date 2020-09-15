@@ -1,8 +1,8 @@
 swagger: "2.0"
 info:
   version: 1.0.0
-  title: Hyperledger Fabric 1.2 Balance Transfer API
-  description: Simple Api Sample for to interact with HLF 1.2 NETWORK
+  title: Hyperledger Fabric 1.4 Balance Transfer API
+  description: Simple Api Sample for to interact with HLF 1.4 NETWORK
 basePath: /api/v1
 tags:
   - name: Examples
